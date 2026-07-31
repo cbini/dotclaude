@@ -1,0 +1,7 @@
+# Whitelist: ignore everything, track only what is explicitly negated below.
+# ~/.claude is a live runtime directory (sessions, caches, credentials) —
+# never flip this to a blocklist.
+/*
+!/.gitignore
+!/README.md
+!/output-styles/
