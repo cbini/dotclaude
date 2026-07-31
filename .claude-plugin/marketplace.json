@@ -1,0 +1,17 @@
+{
+  "$schema": "https://www.schemastore.org/claude-code-marketplace.json",
+  "name": "dotclaude",
+  "description": "Charlie Bini's personal Claude Code configuration.",
+  "owner": {
+    "name": "Charlie Bini",
+    "url": "https://github.com/cbini"
+  },
+  "plugins": [
+    {
+      "name": "dotclaude",
+      "description": "Action-first ADHD output style (adapted from ayghri/i-have-adhd).",
+      "source": "./",
+      "category": "productivity"
+    }
+  ]
+}
