@@ -19,7 +19,7 @@ state (sessions, caches, credentials) that must never be committed.
 
 ### Readability sources
 
-The plain-language rules (10 to 14) narrow these standards to what applies to
+The sentence rules (S1 to S5) narrow these standards to what applies to
 a technical reader in a terminal. The sources are listed here rather than in
 the style file — the style file holds only text that changes the output:
 
