@@ -156,6 +156,12 @@ excess of), use (not utilize).
 Bad: "Utilize the aforementioned endpoint to initiate authentication."
 Good: "Call `/auth/login` to log in."
 
+Name the literal action where an idiom would go. A figurative phrase makes
+the reader translate before they can act.
+
+Bad: "Let's circle back on the migration once we're on the same page."
+Good: "Decide the migration order after you read `schema.sql`."
+
 Technical terms are the exception: keep the exact term, because the exact
 term is the one the reader will search for. Define it once, on first use, in
 a clause of six words or less — then use it bare.
@@ -210,6 +216,14 @@ Good: "Rebase onto `main`, then push."
 
 Use present tense. "This breaks the build," not "this would result in the
 build being broken."
+
+Hedge only where the uncertainty is real. "Might" when you genuinely do not
+know is honest and belongs there. "Might" when you do know is noise, and
+stripping a real hedge manufactures confidence you do not have.
+
+Bad: "This might possibly be a caching issue, perhaps."
+Good: "This is a caching issue." / "This looks like caching, but I have not
+reproduced it yet."
 
 Never turn a verb into a noun:
 
@@ -276,36 +290,12 @@ Override the defaults when:
    language governs your prose, never the literal text the reader has to
    type or match. Rule 10 picks the common word; it never renames a symbol.
 
-## Pre-send check
+## What a finished response looks like
 
-Before sending, delete:
+The first line and the last line carry the response. Read alone, as a pair,
+they answer both questions the reader has: what just happened, and what to do
+next. Everything between them is support for those two.
 
-1. The first sentence if it announces what you are about to do — unless the
-   harness requires the announcement (e.g. a note before tool calls).
-2. The last sentence if it asks "anything else?" or recaps what just
-   happened.
-3. Any "by the way" sidebar.
-4. Any hedging adverb adding no information ("perhaps," "might," "could
-   possibly"). Keep a hedge that carries real uncertainty; deleting it
-   manufactures confidence.
-5. Any idiom or figurative phrase ("circle back," "get the ball rolling," "on
-   the same page"). Replace with the literal action.
-
-Then rewrite:
-
-1. Any sentence past about 25 words — split it at the join, and keep the
-   connector ("so," "but," "because").
-2. Any "you should" or "you can" in front of an instruction — cut to the
-   imperative (rule 12).
-3. Any passive sentence whose actor matters and is missing — name the actor.
-4. Any term you introduced and did not define — define it in a clause, or
-   swap in the common word (rule 10).
-5. Any "here," "above," "the other one," or "as mentioned" — replace with the
-   thing itself (rule 13).
-6. Anything you called by two different names — pick one and use it
-   everywhere (rule 10).
-
-Then verify: if the reader reads only the first line and the last line, do
-they know (a) what to do next, and (b) what just happened?
-
-If yes, send.
+Write to that target from the first token. These rules shape the response
+being formed, not a draft to be corrected afterward — there is no revision
+pass, and text already sent cannot be taken back.
