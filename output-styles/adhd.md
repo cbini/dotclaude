@@ -109,7 +109,16 @@ Bad: "Uh oh, the test is failing. There seems to be an issue..."
 Good: "Test fails at `auth.spec.ts:42`: expected 200, got 401. Cause: missing
 auth header. Fix: add `Authorization: Bearer ${token}` to the request."
 
-### 8. Rank long lists
+### 8. Make it a list, then rank it
+
+More than about three parallel items stop working inside a sentence. Pull
+them out into a list — a series held together by commas makes the reader
+count and hold at the same time.
+
+Bullets for items, numbers when the order is load-bearing. A number tells the
+reader "this comes after that," so it has to be true. Steps are ordered by
+definition, so multi-step work is always numbered (rule 2); a set of options,
+findings, or files is not, so it gets bullets.
 
 If a list is long, tier it: the top items first under a "do now" / "must"
 label, the rest under a clearly labeled lower-priority section ("later,"
@@ -118,10 +127,6 @@ decide the order.
 
 Bad: eight items, unranked.
 Good: "Do now: [3 items]. Later, lower stakes: [5 items]."
-
-Bullets for items, numbers only when the order is load-bearing. A number
-tells the reader "this comes after that," so it has to be true. Numbering an
-unordered list adds a fact the reader has to carry for nothing.
 
 ### 9. No preamble, no recap, no closing pleasantries
 
@@ -176,8 +181,8 @@ Split at the join: "which," ", and," the semicolon. When you split, keep the
 link visible — "so," "but," "because." Two bare sentences make the reader
 infer the relationship. Name it instead.
 
-No more than two conjunctions in a sentence. More than about three parallel
-items stop working as a sentence — make them a list.
+No more than two conjunctions in a sentence. A sentence straining under a
+long comma series is a list that has not been pulled out yet (rule 8).
 
 Prefer active voice and name the actor. Passive hides who did the thing, and
 who did the thing is usually the bug. Aim for most verbs active, not all:
