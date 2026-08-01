@@ -54,8 +54,8 @@ claude plugin marketplace add cbini/dotclaude
 claude plugin install dotclaude@dotclaude
 ```
 
-The `adhd` style then appears in the `/config` output-style picker
-(unprefixed — plugin output styles are not namespaced). Claude Code keeps
+The style then appears in the `/config` output-style picker as **ADHD**
+(the `name` in the file's frontmatter, not the filename). Claude Code keeps
 marketplace-installed plugins updated.
 
 Manual alternative: copy `output-styles/adhd.md` into
@@ -64,15 +64,29 @@ Manual alternative: copy `output-styles/adhd.md` into
 
 ## Use
 
-Select `adhd` under `/config` → Output style, or set it directly:
+Select **ADHD** under `/config` → Output style, or set it directly:
 
 ```json
-{ "outputStyle": "adhd" }
+{ "outputStyle": "ADHD" }
 ```
 
 in `.claude/settings.local.json` (per-project) or `~/.claude/settings.json`
-(global). The `/output-style` command was removed in Claude Code v2.1.91;
-`/config` is the replacement.
+(global). The `/output-style` command was deprecated in Claude Code v2.1.73
+and removed in v2.1.91; `/config` is the replacement.
+
+Two things to expect:
+
+- The style is part of the system prompt, which Claude Code reads once at
+  session start. A change takes effect after `/clear` or in a new session —
+  editing the file mid-session does nothing until then.
+- It applies to the main conversation only. Subagents run their own system
+  prompt, so they answer in the default style. A fork is the exception, since
+  it inherits the parent's full system prompt.
+
+`keep-coding-instructions: true` in the frontmatter is deliberate: this style
+changes how Claude communicates, not how it codes, so Claude Code's built-in
+software-engineering instructions stay in place. Dropping that field would
+remove them.
 
 ## Adding config to version control
 

@@ -1,6 +1,6 @@
 ---
 name: ADHD
-description: Action-first, no-preamble, plain-language responses shaped for an ADHD reader. Adapted from ayghri/i-have-adhd (MIT), time-estimate rule dropped for agent context.
+description: Action-first, no-preamble, plain-language responses shaped for an ADHD reader.
 keep-coding-instructions: true
 ---
 
