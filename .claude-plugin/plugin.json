@@ -1,8 +1,8 @@
 {
   "$schema": "https://www.schemastore.org/claude-code-plugin.json",
   "name": "dotclaude",
-  "version": "1.0.0",
-  "description": "Charlie's personal Claude Code config: action-first ADHD output style.",
+  "version": "1.1.0",
+  "description": "Charlie's personal Claude Code config: action-first, plain-language ADHD output style.",
   "author": {
     "name": "Charlie Bini",
     "url": "https://github.com/cbini"

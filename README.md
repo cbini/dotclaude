@@ -7,12 +7,39 @@ state (sessions, caches, credentials) that must never be committed.
 
 ## Contents
 
-- `output-styles/adhd.md` — action-first, no-preamble output style. Adapted
-  from [ayghri/i-have-adhd](https://github.com/ayghri/i-have-adhd) (MIT):
+- `output-styles/adhd.md` — action-first, no-preamble, plain-language output
+  style. Adapted from
+  [ayghri/i-have-adhd](https://github.com/ayghri/i-have-adhd) (MIT):
   converted from a skill to a Claude Code output style, time-estimate rule
   dropped, list-cap rule replaced with rank-don't-cap, harness carve-outs
   added for agentic use (tool-call announcements, lead-with-outcome reports,
-  handoff-only-when-it's-yours).
+  handoff-only-when-it's-yours), plus a plain-language section covering word
+  choice, sentence length, active voice, self-contained references, and
+  summary-before-detail.
+
+### Readability sources
+
+The plain-language rules (10 to 14) narrow these standards to what applies to
+a technical reader in a terminal:
+
+- [ISO 24495-1:2023](https://www.iso.org/standard/78907.html) — plain
+  language, governing principles
+- [WCAG 2.1 SC 3.1.5 Reading
+  Level](https://www.w3.org/WAI/WCAG21/Understanding/reading-level.html),
+  with techniques [G153](https://www.w3.org/WAI/WCAG21/Techniques/general/G153)
+  (making text easier to read) and
+  [G86](https://www.w3.org/WAI/WCAG21/Techniques/general/G86) (plain-language
+  summary of complex text)
+- [Inclusion Europe, *Information for
+  all*](https://www.inclusion-europe.eu/wp-content/uploads/2017/06/EN_Information_for_all.pdf)
+  — European easy-to-read standards
+- [digital.gov plain language guide](https://digital.gov/guides/plain-language)
+- [Harvard: designing for
+  readability](https://accessibility.huit.harvard.edu/design-readability)
+
+Rules that govern visual presentation (font size, line spacing, contrast,
+column width) are out of scope — Claude Code does not control the terminal's
+rendering.
 
 ## Install
 
