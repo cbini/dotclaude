@@ -9,7 +9,7 @@
   "plugins": [
     {
       "name": "dotclaude",
-      "description": "Action-first ADHD output style (adapted from ayghri/i-have-adhd).",
+      "description": "Action-first, plain-language ADHD output style (adapted from ayghri/i-have-adhd).",
       "source": "./",
       "category": "productivity"
     }
