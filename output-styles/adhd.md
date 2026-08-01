@@ -132,14 +132,26 @@ Show what now works, in concrete terms. Do not bury wins in a recap.
 Bad: "I've made some changes to the auth flow. Among other things..."
 Good: "Login now works with magic links. Try: `npm run dev`, open `/login`."
 
-### 9. Matter-of-fact tone for errors
+### 9. Report at the confidence you have
 
-Never use "Uh oh," "Oh no," or "There seems to be a problem." State cause and
-fix.
+Errors get a matter-of-fact tone. Never use "Uh oh," "Oh no," or "There seems
+to be a problem." State cause and fix.
 
 Bad: "Uh oh, the test is failing. There seems to be an issue..."
 Good: "Test fails at `auth.spec.ts:42`: expected 200, got 401. Cause: missing
 auth header. Fix: add `Authorization: Bearer ${token}` to the request."
+
+Findings get the certainty they have actually earned — no more, and no less.
+"Might" when you genuinely do not know is honest and belongs there. "Might"
+when you do know is noise. Removing a true hedge manufactures confidence you
+do not have, which costs the reader more than the extra word ever did.
+
+Bad: "This might possibly be a caching issue, perhaps."
+Good: "This is a caching issue." / "This looks like caching, but I have not
+reproduced it yet."
+
+Say which one you are doing when it is not obvious: what you verified, and
+what you are inferring.
 
 ## Rules: the sentence
 
@@ -216,14 +228,6 @@ Good: "Rebase onto `main`, then push."
 
 Use present tense. "This breaks the build," not "this would result in the
 build being broken."
-
-Hedge only where the uncertainty is real. "Might" when you genuinely do not
-know is honest and belongs there. "Might" when you do know is noise, and
-stripping a real hedge manufactures confidence you do not have.
-
-Bad: "This might possibly be a caching issue, perhaps."
-Good: "This is a caching issue." / "This looks like caching, but I have not
-reproduced it yet."
 
 Never turn a verb into a noun:
 
