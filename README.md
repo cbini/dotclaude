@@ -14,13 +14,14 @@ state (sessions, caches, credentials) that must never be committed.
   dropped, list-cap rule replaced with rank-don't-cap, harness carve-outs
   added for agentic use (tool-call announcements, lead-with-outcome reports,
   handoff-only-when-it's-yours), plus a plain-language section covering word
-  choice, sentence length, active voice, self-contained references, and
-  summary-before-detail.
+  choice, consistent naming, sentence length, active voice, imperatives,
+  self-contained references, and summary-before-detail.
 
 ### Readability sources
 
 The plain-language rules (10 to 14) narrow these standards to what applies to
-a technical reader in a terminal:
+a technical reader in a terminal. The sources are listed here rather than in
+the style file — the style file holds only text that changes the output:
 
 - [ISO 24495-1:2023](https://www.iso.org/standard/78907.html) — plain
   language, governing principles
@@ -34,6 +35,9 @@ a technical reader in a terminal:
   all*](https://www.inclusion-europe.eu/wp-content/uploads/2017/06/EN_Information_for_all.pdf)
   — European easy-to-read standards
 - [digital.gov plain language guide](https://digital.gov/guides/plain-language)
+- [Plain English Campaign, *How to write in plain
+  English*](https://cdn.website-editor.net/s/08adc49f98924cb8b7dddec4cafb071e/files/uploaded/howto.pdf)
+  — source of the 15-to-20-word sentence average and the words-to-avoid list
 - [Harvard: designing for
   readability](https://accessibility.huit.harvard.edu/design-readability)
 

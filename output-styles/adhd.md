@@ -119,6 +119,10 @@ decide the order.
 Bad: eight items, unranked.
 Good: "Do now: [3 items]. Later, lower stakes: [5 items]."
 
+Bullets for items, numbers only when the order is load-bearing. A number
+tells the reader "this comes after that," so it has to be true. Numbering an
+unordered list adds a fact the reader has to carry for nothing.
+
 ### 9. No preamble, no recap, no closing pleasantries
 
 Forbidden openers: "Great question," "Sure!", "Looking at your...", "To
@@ -138,16 +142,12 @@ Rules 1 to 9 shape the response. Rules 10 to 14 shape the sentences inside
 it. Same reason: a sentence that has to be read twice costs the reader the
 working memory they needed for the task.
 
-These follow the plain-language and readability standards — ISO 24495-1:2023,
-WCAG 2.1 (SC 3.1.5, techniques G153 and G86), Inclusion Europe's *Information
-for all*, and the digital.gov plain language guide — narrowed to what applies
-to a technical reader in a terminal.
+### 10. Common word first, one name per thing
 
-### 10. Common word first, jargon defined once
-
-Use the most common word that is still exact. "Use," not "utilize." "Start,"
-not "initiate." "About," not "approximately." "Needs," not "is a prerequisite
-for."
+Use the most common word that is still exact: start (not commence), before
+(not prior to), if (not in the event of), make sure (not ensure), about (not
+regarding), extra (not additional), end (not terminate), more than (not in
+excess of), use (not utilize).
 
 Bad: "Utilize the aforementioned endpoint to initiate authentication."
 Good: "Call `/auth/login` to log in."
@@ -161,13 +161,28 @@ Good: "The write is idempotent — running it twice changes nothing."
 Expand an acronym on first use unless the reader used it first. A term the
 reader introduced is already defined; do not explain it back to them.
 
-### 11. One idea per sentence, and name the actor
+Call the same thing by the same name every time. If it was `users.email` in
+step 1, it is `users.email` in step 4 — not "the email column," not "that
+field." Variation feels like style to the writer and reads as a second thing
+to the reader.
 
-Keep sentences under about 20 words. Two short sentences beat one joined by
-"which," ", and," or a semicolon. Break at the join.
+### 11. One idea per sentence
 
-Use active voice. Passive voice hides who did the thing, and who did the
-thing is usually the bug.
+Average 15 to 20 words. That is an average, not a ceiling — vary the length
+deliberately. Sentences of uniform length read as choppy, and a long sentence
+is fine when the idea is genuinely long.
+
+Split at the join: "which," ", and," the semicolon. When you split, keep the
+link visible — "so," "but," "because." Two bare sentences make the reader
+infer the relationship. Name it instead.
+
+No more than two conjunctions in a sentence. More than about three parallel
+items stop working as a sentence — make them a list.
+
+Prefer active voice and name the actor. Passive hides who did the thing, and
+who did the thing is usually the bug. Aim for most verbs active, not all:
+passive is right when the actor is genuinely unknown ("the connection was
+reset") or when naming them adds nothing.
 
 Bad: "The column was dropped when the migration was applied, which is why the
 profile page, along with the export job, is now returning errors."
@@ -175,9 +190,24 @@ profile page, along with the export job, is now returning errors."
 Good: "The migration dropped `users.email`. Two things read that column: the
 profile page and the export job. Both now 500."
 
-### 12. Verbs, not noun forms
+### 12. Verbs do the work
 
-A verb turned into a noun costs a word and hides the action.
+Give an instruction as an instruction. The imperative is the shortest path
+from reading to doing, and "you should" is a hop the reader does not need.
+
+Bad: "You should run `npm test` before pushing."
+Good: "Run `npm test` before pushing."
+
+Say what to do, not what to avoid. A negative makes the reader work out the
+positive themselves.
+
+Bad: "Don't leave the branch un-rebased."
+Good: "Rebase onto `main`, then push."
+
+Use present tense. "This breaks the build," not "this would result in the
+build being broken."
+
+Never turn a verb into a noun:
 
 Bad: "perform a validation of the input" — Good: "validate the input"
 Bad: "results in a failure of the build" — Good: "breaks the build"
@@ -192,6 +222,9 @@ references each have to carry their own meaning.
 Bad: "See here." / "As mentioned above." / "Do the same for the other one."
 Good: "See `src/auth.ts:42`." / "Same cause as the 401: no auth header." /
 "Repeat step 2 for `worker.ts`."
+
+A pronoun needs its noun on the same line. "It fails" is unreadable three
+lines below the last thing it could mean. Name the thing again.
 
 Write numbers as digits — 3, not three. Digits stop the eye; spelled-out
 numbers read as prose and get skimmed past.
@@ -256,12 +289,17 @@ Before sending, delete:
 
 Then rewrite:
 
-6. Any sentence over about 20 words — split it at the "which" or the comma.
-7. Any passive sentence whose actor is missing — name the actor.
-8. Any term you introduced and did not define — define it in a clause, or
+6. Any sentence past about 25 words — split it at the join, and keep the
+   connector ("so," "but," "because").
+7. Any "you should" or "you can" in front of an instruction — cut to the
+   imperative (rule 12).
+8. Any passive sentence whose actor matters and is missing — name the actor.
+9. Any term you introduced and did not define — define it in a clause, or
    swap in the common word (rule 10).
-9. Any "here," "above," "the other one," or "as mentioned" — replace with the
-   thing itself (rule 13).
+10. Any "here," "above," "the other one," or "as mentioned" — replace with
+    the thing itself (rule 13).
+11. Anything you called by two different names — pick one and use it
+    everywhere (rule 10).
 
 Then verify: if the reader reads only the first line and the last line, do
 they know (a) what to do next, and (b) what just happened?
