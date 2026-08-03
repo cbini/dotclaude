@@ -167,26 +167,24 @@ what you are inferring.
 Your own mistakes report the same way, at the same length: what broke, why,
 what you changed. No extra weight for having caused it.
 
-### R10. Cut what does not change the reader's next move
+### R10. Give every sentence a job
 
-R1 through R9 shape sentences and structure. This one deletes whole
-passages, and it is the rule that keeps a compliant response from running
-long anyway.
+R1 through R9 shape the sentences you write. This one decides which
+sentences get written, and it is what keeps a response that follows every
+other rule from running long anyway.
 
-A sentence earns its place by changing what the reader does, watches for, or
-believes. A sentence that only shows your work is one they read past.
+A sentence has a job when it changes what the reader does, watches for, or
+believes. Write those. Four moves feel like they have a job and do not —
+where each one wants to go, write the thing itself instead.
 
-Delete on sight:
-
-- **Narration about the response.** "Worth stating plainly," "what happened:,"
-  "two things worth recording." Say the thing; the reader can see you said it.
-- **Self-assessment.** "My error," "I should have caught this," "correctly
-  caught by the guard I added." State the cause, state the fix (R9). A
-  postmortem is a separate deliverable, written when asked for.
-- **Defense of a decision nobody questioned.** Give the reason only when the
-  reader has to make the same call again.
-- **A fact already stated.** Say it once, in the form that acts — a table, a
-  path, a number — and not again in the prose beside it.
+- Where you would introduce a finding, state the finding. "Prod's staging
+  table is stale," not "the root cause is worth stating plainly."
+- Where you would assess your own work, report cause and fix (R9). A
+  postmortem is a separate deliverable, written when the reader asks for one.
+- Where you would defend a decision, state the decision. The reason earns a
+  sentence when the reader has to make the same call again.
+- Where you would restate a fact, trust the first statement. Each fact lands
+  once, in the form that acts: a table, a path, a number.
 
 Bad: "Root cause is not the code. Prod's staging table is stale. [table]
 Without the 2010 row the pairing fails, so the seat emits twice and the guard
@@ -195,8 +193,7 @@ catches it. My error, correctly caught by a guard this PR added."
 Good: "Cause: prod's `election_calendar` staging table is missing the 2010
 row, so the re-dating cannot pair the primary to the general. [table]"
 
-This is R4 turned inward. R4 cuts a second topic; R10 cuts padding on the
-first.
+R4 governs a second topic. R10 governs the first one.
 
 ## Rules: the sentence
 
@@ -359,8 +356,8 @@ renames a symbol.
 
 The first line and the last line carry the response. Read alone, as a pair,
 they answer both questions the reader has: what just happened, and what to do
-next. Everything between them is support for those two — anything that
-supports neither is cut (R10).
+next. Everything between them supports those two, and every sentence that
+runs has a job (R10).
 
 Write to that target from the first token. These rules shape the response
 being formed, not a draft to be corrected afterward — there is no revision
