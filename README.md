@@ -56,7 +56,8 @@ claude plugin install dotclaude@dotclaude
 
 The style then appears in the `/config` output-style picker as **ADHD**
 (the `name` in the file's frontmatter, not the filename). Claude Code keeps
-marketplace-installed plugins updated.
+marketplace-installed plugins updated. Note that the settings value is
+namespaced — `dotclaude:ADHD`, not `ADHD` — see [Use](#use).
 
 Manual alternative: copy `output-styles/adhd.md` into
 `~/.claude/output-styles/` (all projects) or `.claude/output-styles/`
@@ -64,15 +65,31 @@ Manual alternative: copy `output-styles/adhd.md` into
 
 ## Use
 
-Select **ADHD** under `/config` → Output style, or set it directly:
+Select the style under `/config` → Output style, or set it directly in
+`.claude/settings.local.json` (per-project) or `~/.claude/settings.json`
+(global). The value depends on how you installed it. After the plugin
+install above:
+
+```json
+{ "outputStyle": "dotclaude:ADHD" }
+```
+
+Plugin-provided styles are namespaced `plugin-name:style-name`, so the bare
+frontmatter name does not resolve. After the manual copy into an
+`output-styles/` directory, use the bare name instead:
 
 ```json
 { "outputStyle": "ADHD" }
 ```
 
-in `.claude/settings.local.json` (per-project) or `~/.claude/settings.json`
-(global). The `/output-style` command was deprecated in Claude Code v2.1.73
-and removed in v2.1.91; `/config` is the replacement.
+An unresolvable value fails silently — Claude Code falls back to the default
+style and logs no error, so a typo looks exactly like the style not loading.
+
+The `/output-style` command was deprecated in Claude Code v2.1.73 and removed
+in v2.1.91; `/config` is the replacement. In the VS Code extension (checked on
+v2.1.220) `/config` takes `key=value` arguments with no interactive picker, and
+its `outputStyle` values are the built-in styles only — set a plugin style in
+settings there.
 
 Two things to expect:
 
