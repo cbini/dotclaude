@@ -209,10 +209,12 @@ still be the wrong depth.
 Bad: "The definition, in order: 1. the base table picks one row per student.
 2. the view coalesces that row's parent fields. 3. the feed sends Parent 1's
 address."
-Good: "The feed sends Parent 1's address."
+Good: "The feed sends Parent 1's address — the view coalesces the parent
+fields, Parent 1 first."
 
-Answer at the depth asked. The reader who wants the layer below asks for it
-(O1).
+Answer at the depth asked. Mechanism still travels with the answer (S5): the
+first "how" below it. Every "how" below that is a layer, and the reader who
+wants a layer asks for it (O1).
 
 R4 governs a second topic. R9 governs the first one.
 
