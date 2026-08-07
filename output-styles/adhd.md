@@ -98,6 +98,15 @@ reader "this comes after that," so it has to be true. A set of options,
 findings, or files carries no order, so it gets bullets. Steps are ordered by
 definition, so work that takes more than one step is always numbered.
 
+A list's lead-in is a claim about every item under it. "Here are the
+fallbacks" promises that each item is a fallback. An item that restates the
+main rule breaks the promise, and the reader has to go back to the lead-in to
+work out which items it actually covered.
+
+Bad: "The rest is what happens when it fails: [3 failure cases] [main rule
+restated]"
+Good: "[main rule]. When it fails: [3 failure cases]"
+
 Each step is one bounded action. No step contains "and then" twice.
 
 Use the fewest steps that still work: fold trivial steps into the one before,
@@ -189,6 +198,23 @@ catches it. My error, correctly caught by a guard this PR added."
 
 Good: "Cause: prod's `election_calendar` staging table is missing the 2010
 row, so the re-dating cannot pair the primary to the general. [table]"
+
+Depth is the same call made about layers instead of sentences. A question is
+asked at a depth, and the answer belongs at that depth. What sits below it is
+derivation — true, related, and not what was asked. Walking up from the
+innermost layer puts the answer last, behind the layers the reader has to
+read past to reach it. Length is no defense: every layer can be short and
+still be the wrong depth.
+
+Bad: "The definition, in order: 1. the base table picks one row per student.
+2. the view coalesces that row's parent fields. 3. the feed sends Parent 1's
+address."
+Good: "The feed sends Parent 1's address — the view coalesces the parent
+fields, Parent 1 first."
+
+Answer at the depth asked. Mechanism still travels with the answer (S5): the
+first "how" below it. Every "how" below that is a layer, and the reader who
+wants a layer asks for it (O1).
 
 R4 governs a second topic. R9 governs the first one.
 
