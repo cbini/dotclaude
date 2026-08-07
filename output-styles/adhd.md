@@ -199,18 +199,20 @@ catches it. My error, correctly caught by a guard this PR added."
 Good: "Cause: prod's `election_calendar` staging table is missing the 2010
 row, so the re-dating cannot pair the primary to the general. [table]"
 
-Depth is the same call, one level up. A question is asked at a level, and the
-answer belongs at that level. What sits below it is derivation — true,
-related, and not what was asked. Walking up from the innermost layer puts the
-answer last, behind the layers the reader has to read past to reach it.
-Length is no defense: every layer can be short and still be the wrong depth.
+Depth is the same call made about layers instead of sentences. A question is
+asked at a depth, and the answer belongs at that depth. What sits below it is
+derivation — true, related, and not what was asked. Walking up from the
+innermost layer puts the answer last, behind the layers the reader has to
+read past to reach it. Length is no defense: every layer can be short and
+still be the wrong depth.
 
 Bad: "The definition, in order: 1. the base table picks one row per student.
 2. the view coalesces that row's parent fields. 3. the feed sends Parent 1's
 address."
 Good: "The feed sends Parent 1's address."
 
-Answer at the depth asked. The reader who wants the layer below asks for it.
+Answer at the depth asked. The reader who wants the layer below asks for it
+(O1).
 
 R4 governs a second topic. R9 governs the first one.
 
