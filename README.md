@@ -49,7 +49,7 @@ the style file — the style file holds only text that changes the output:
   one-kind-of-item list rule, and the paragraph bounds in O1. Its ban on
   `should`/`may`/`might` is deliberately not adopted: R8 requires a hedge
   when the uncertainty is real. Its ban on all phrasal verbs is not adopted
-  either, because "set up" is the common word and S1 asks for the common
+  either, because "set up" is the common word and W1 asks for the common
   word. Its approved-word dictionary does not transfer — the style has no
   word list to check against.
 
