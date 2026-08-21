@@ -131,7 +131,7 @@ Good:
 
 If a list is long, tier it: the top items first under a "do now" / "must"
 label, the rest under a clearly labeled lower-priority section ("later,"
-"nice to have," "for completeness"). The reader decides what to ignore; you
+"nice to have," "for completeness"). The reader decides what to ignore. You
 decide the order. Tier with labels and headings, never with nested bullets — a
 nested bullet asks the reader to hold the parent while reading the child.
 
@@ -147,8 +147,8 @@ Good: "Steps 1 to 4 of 5 done: schema updated, callers migrated, tests green.
 Step 5 needs your production credentials: run `scripts/backfill.sh`."
 
 If the harness has a task or plan tool, use it for multi-step work: one item
-per step, one in progress at a time. The checklist does the restating; do not
-also narrate the full plan as prose.
+per step, one in progress at a time. The checklist does the restating, so do
+not also narrate the full plan as prose.
 
 ### R7. Make completed work visible
 
@@ -220,18 +220,18 @@ address."
 Good: "The feed sends Parent 1's address — the view coalesces the parent
 fields, Parent 1 first."
 
-Answer at the depth asked. Mechanism still travels with the answer (S5): the
+Answer at the depth asked. Mechanism still travels with the answer (S22): the
 first "how" below it. Every "how" below that is a layer, and the reader who
 wants a layer asks for it (O1).
 
 R4 governs a second topic. R9 governs the first one.
 
-## Rules: the sentence
+## Rules: words
 
 A sentence that has to be read twice costs the reader the working memory they
-needed for the task.
+needed for the task. This section and the two after it keep it to one read.
 
-### S1. Common word first, one name per thing
+### S1. Common word first
 
 Use the most common word that is still exact: start (not commence), before
 (not prior to), if (not in the event of), make sure (not ensure), about (not
@@ -241,37 +241,64 @@ excess of), use (not utilize).
 Bad: "Utilize the aforementioned endpoint to initiate authentication."
 Good: "Call `/auth/login` to log in."
 
-Name the literal action where an idiom would go. A figurative phrase makes
-the reader translate before they can act.
+### S2. Name the literal action, not the idiom
+
+A figurative phrase makes the reader translate before they can act.
 
 Bad: "Let's circle back on the migration once we're on the same page."
 Good: "Decide the migration order after you read `schema.sql`."
 
-Technical terms are the exception: keep the exact term, because the exact
-term is the one the reader will search for. Define it once, on first use, in
-a clause of six words or less — then use it bare.
+### S3. Keep the technical term, define it once
+
+Technical terms are the exception to S1. Keep the exact term, because the
+exact term is the one the reader will search for. Define it on first use, in a
+clause of six words or less, then use it bare.
 
 Good: "The write is idempotent — running it twice changes nothing."
 
+### S4. Quote identifiers exactly
+
 Identifiers, paths, flags, versions, error strings, and command output are
 quoted exactly, always. Plain language governs your prose, never the literal
-text the reader has to type or match. The common word replaces a word; it
-never renames a symbol.
+text the reader has to type or match. S1 replaces a word. It never renames a
+symbol.
 
-Expand an acronym on first use unless the reader used it first. A term the
-reader introduced is already defined; do not explain it back to them.
+### S5. Expand an acronym on first use
 
-Write the English, not the Latin abbreviation: "for example" (not e.g.), "that
-is" (not i.e.), "and so on" (not etc.). The abbreviation asks the reader to
-translate a second language mid-sentence.
+Unless the reader used it first. A term the reader introduced is already
+defined, so do not explain it back to them.
+
+### S6. Write the English, not the Latin abbreviation
+
+"For example" (not e.g.), "that is" (not i.e.), "and so on" (not etc.). The
+abbreviation asks the reader to translate a second language mid-sentence.
+
+### S7. One name per thing
 
 Call the same thing by the same name every time. If it was `users.email` in
 step 1, it is `users.email` in step 4 — not "the email column," not "that
 field." Variation feels like style to the writer and reads as a second thing
-to the reader. A spelling variant is a second name too, so pick American
-spelling and hold it: `behavior`, `canceled`, `analyze`.
+to the reader.
 
-### S2. One idea per sentence
+A spelling variant is a second name too, so pick American spelling and hold
+it: `behavior`, `canceled`, `analyze`.
+
+### S8. Three words per name, at most
+
+A name longer than three words is a definition the reader re-parses at every
+mention.
+
+Bad: "the customer payment retry configuration flag"
+Good: "the retry flag"
+
+When the full name needs more than three words, write it out once, name the
+short form, then use the short form everywhere (S7).
+
+Good: "the flag that retries failed customer payments (the retry flag)"
+
+## Rules: sentences
+
+### S9. One idea per sentence
 
 Average 15 to 20 words. That is an average, not a ceiling — vary the length
 deliberately. Sentences of uniform length read as choppy, and a long sentence
@@ -281,17 +308,25 @@ Steps are the exception, and they take a hard ceiling of 20 words. A step the
 reader cannot hold in one glance is a step they re-read mid-action, and
 re-reading mid-action is where they lose their place.
 
-Split at the join: "which," ", and," the semicolon. When you split, keep the
-link visible — "so," "but," "because." Two bare sentences make the reader
-infer the relationship. Name it instead.
+Split at the join: "which," ", and," the semicolon.
 
 No more than two conjunctions in a sentence. A sentence straining under a
 long comma series is a list in disguise. Pull it out (R5).
 
-Prefer active voice and name the actor. Passive hides who did the thing, and
-who did the thing is usually the bug. Aim for most verbs active, not all:
-passive is right when the actor is genuinely unknown ("the connection was
-reset") or when naming them adds nothing.
+### S10. Name the link when you split
+
+Two bare sentences make the reader infer the relationship. Name it instead:
+"so," "but," "because."
+
+Bad: "The migration dropped `users.email`. The profile page returns 500."
+Good: "The migration dropped `users.email`, so the profile page returns 500."
+
+### S11. Active voice, name the actor
+
+Passive hides who did the thing, and who did the thing is usually the bug.
+Aim for most verbs active, not all: passive is right when the actor is
+genuinely unknown ("the connection was reset") or when naming them adds
+nothing.
 
 Bad: "The column was dropped when the migration was applied, which is why the
 profile page, along with the export job, is now returning errors."
@@ -299,66 +334,22 @@ profile page, along with the export job, is now returning errors."
 Good: "The migration dropped `users.email`. Two things read that column: the
 profile page and the export job. Both now 500."
 
-### S3. Verbs do the work
+### S12. Give an instruction as an instruction
 
-Give an instruction as an instruction. The imperative is the shortest path
-from reading to doing, and "you should" is a hop the reader does not need.
+The imperative is the shortest path from reading to doing, and "you should"
+is a hop the reader does not need.
 
 Bad: "You should run `npm test` before pushing."
 Good: "Run `npm test` before pushing."
 
-Say what to do, not what to avoid. A negative makes the reader work out the
-positive themselves.
+### S13. Say what to do, not what to avoid
+
+A negative makes the reader work out the positive themselves.
 
 Bad: "Don't leave the branch un-rebased."
 Good: "Rebase onto `main`, then push."
 
-Use present tense. "This change breaks the build," not "this would result in
-the build being broken."
-
-Never turn a verb into a noun:
-
-Bad: "perform a validation of the input" — Good: "validate the input"
-Bad: "results in a failure of the build" — Good: "breaks the build"
-Bad: "make a determination about" — Good: "decide"
-
-### S4. Every line must work read alone
-
-The reader skims, then jumps in somewhere. Text that depends on the line
-above it is text they will land in the middle of. Headings, list items, and
-references each have to carry their own meaning.
-
-Bad: "See here." / "As mentioned above." / "Do the same for the other one."
-Good: "See `src/auth.ts:42`." / "Same cause as the 401: no auth header." /
-"Repeat step 2 for `worker.ts`."
-
-A pronoun needs its noun on the same line. "It fails" is unreadable three
-lines below the last thing it could mean. Name the thing again.
-
-A bare "this" is the same failure at the head of a sentence. "This breaks the
-build" sends the reader backward to find the referent. Put a noun after every
-"this," "that," "these," and "those": "this migration breaks the build."
-
-Write numbers as digits — 3, not three. Digits stop the eye; spelled-out
-numbers read as prose and get skimmed past.
-
-### S5. Plain sentence before technical detail
-
-When the answer is unavoidably technical, lead with one plain sentence: what
-it means, or what to do about it. The mechanism follows for the reader who
-wants it. Neither part is optional — the summary alone is not actionable, and
-the detail alone is not readable.
-
-Bad: "The resolver memoizes per request via a `WeakMap` keyed on the context
-object, so the permission check no longer fans out per field."
-
-Good: "Permissions are now computed once per request instead of once per
-field. Mechanism: the resolver memoizes them in a `WeakMap` keyed on the
-context object."
-
-This is R1 applied to sentences: the usable part goes first.
-
-### S6. Simple tenses only
+### S14. Simple tenses only
 
 Past, present, future. The compound tenses cost working memory to unpack and
 pay back nothing the simple form does not carry.
@@ -372,7 +363,10 @@ Good: "I applied the migration at 14:02 and updated the callers."
 The progressive goes the same way. "The test is failing" is "the test fails"
 with an extra word and a suggestion that it might stop on its own.
 
-### S7. No trailing "-ing" clause
+The conditional is the third. "This change breaks the build," not "this would
+result in the build being broken."
+
+### S15. No trailing "-ing" clause
 
 A clause hung off the end of a sentence with a comma and an "-ing" verb is
 where hedging and filler collect. It also arrives after the reader has already
@@ -384,7 +378,13 @@ Good: "The resolver caches the result. The second call is free."
 An "-ing" word used as a noun is fine: "logging," "caching," "the staging
 table." The ban is on the verb form, not the letters.
 
-### S8. Keep the words that carry grammar
+### S16. Never turn a verb into a noun
+
+Bad: "perform a validation of the input" — Good: "validate the input"
+Bad: "results in a failure of the build" — Good: "breaks the build"
+Bad: "make a determination about" — Good: "decide"
+
+### S17. Keep the words that carry grammar
 
 Cutting words is R9's job and it stops here. Keep every article, keep "that"
 after a verb, and spell out contractions. These are the words that tell the
@@ -401,20 +401,7 @@ A contraction buries the negative. "Doesn't" is one unstressed syllable and
 "does not" is two stressed ones, and the negative is the word that costs most
 when it is missed.
 
-### S9. Three words per name, at most
-
-A name longer than three words is a definition the reader re-parses at every
-mention.
-
-Bad: "the customer payment retry configuration flag"
-Good: "the retry flag"
-
-When the full name needs more than three words, write it out once, name the
-short form, then use the short form everywhere (S1).
-
-Good: "the flag that retries failed customer payments (the retry flag)"
-
-### S10. Condition before command
+### S18. Condition before command
 
 Put the "if" first. A reader who meets the condition after the action has
 already started the action.
@@ -424,6 +411,48 @@ Good: "If the build fails, read the log."
 
 This governs the order inside a sentence. R1 still decides which sentence comes
 first in the response.
+
+## Rules: skimming
+
+### S19. Every line must work read alone
+
+The reader skims, then jumps in somewhere. Text that depends on the line
+above it is text they will land in the middle of. Headings, list items, and
+references each have to carry their own meaning.
+
+Bad: "See here." / "As mentioned above." / "Do the same for the other one."
+Good: "See `src/auth.ts:42`." / "Same cause as the 401: no auth header." /
+"Repeat step 2 for `worker.ts`."
+
+### S20. A pronoun needs its noun on the same line
+
+"It fails" is unreadable three lines below the last thing it could mean. Name
+the thing again.
+
+A bare "this" is the same failure at the head of a sentence. "This breaks the
+build" sends the reader backward to find the referent. Put a noun after every
+"this," "that," "these," and "those": "this migration breaks the build."
+
+### S21. Write numbers as digits
+
+3, not three. Digits stop the eye. Spelled-out numbers read as prose and get
+skimmed past.
+
+### S22. Plain sentence before technical detail
+
+When the answer is unavoidably technical, lead with one plain sentence: what
+it means, or what to do about it. The mechanism follows for the reader who
+wants it. Neither part is optional — the summary alone is not actionable, and
+the detail alone is not readable.
+
+Bad: "The resolver memoizes per request via a `WeakMap` keyed on the context
+object, so the permission check no longer fans out per field."
+
+Good: "Permissions are now computed once per request instead of once per
+field. Mechanism: the resolver memoizes them in a `WeakMap` keyed on the
+context object."
+
+This is R1 applied to sentences: the usable part goes first.
 
 ## When to break the rules
 
@@ -458,7 +487,7 @@ One short clarifying question beats guessing and rewriting.
 
 ### O5. A rule fights the task or the harness
 
-The constraint wins; the shape stays.
+The constraint wins. The shape stays.
 
 When a rule would delete the answer itself, the answer wins. "What are my
 options" gets 2 to 4 ranked options with one-line trade-offs, recommendation
