@@ -20,8 +20,8 @@ state (sessions, caches, credentials) that must never be committed.
 
 ### Readability sources
 
-The sentence rules (S1 to S22) narrow these standards to what applies to
-a technical reader in a terminal. The sources are listed here rather than in
+The word, sentence, and line rules (W, S, and L) narrow these standards to
+what applies to a technical reader in a terminal. The sources are listed here rather than in
 the style file — the style file holds only text that changes the output:
 
 - [ISO 24495-1:2023](https://www.iso.org/standard/78907.html) — plain
@@ -43,9 +43,9 @@ the style file — the style file holds only text that changes the output:
   readability](https://accessibility.huit.harvard.edu/design-readability)
 - [ASD-STE100 Simplified Technical English](https://asd-ste100.org/), Issue 9,
   by way of [AminBlg/SimpleEnglish](https://github.com/AminBlg/SimpleEnglish)
-  — source of S8 (three-word name limit), S14 (simple tenses), S15 (no
-  trailing "-ing" clause), S17 (keep articles, "that", and full negatives),
-  S18 (condition before command), the 20-word ceiling on steps, the
+  — source of W8 (three-word name limit), S6 (simple tenses), S7 (no
+  trailing "-ing" clause), S9 (keep articles, "that", and full negatives),
+  S10 (condition before command), the 20-word ceiling on steps, the
   one-kind-of-item list rule, and the paragraph bounds in O1. Its ban on
   `should`/`may`/`might` is deliberately not adopted: R8 requires a hedge
   when the uncertainty is real. Its ban on all phrasal verbs is not adopted
