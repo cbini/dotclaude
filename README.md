@@ -13,9 +13,10 @@ state (sessions, caches, credentials) that must never be committed.
   converted from a skill to a Claude Code output style, time-estimate rule
   dropped, list-cap rule replaced with rank-don't-cap, harness carve-outs
   added for agentic use (tool-call announcements, lead-with-outcome reports,
-  handoff-only-when-it's-yours), plus a plain-language section covering word
-  choice, consistent naming, sentence length, active voice, imperatives,
-  self-contained references, and summary-before-detail.
+  take-your-own-next-step, handoff only when it's genuinely the reader's),
+  plus a plain-language section covering word choice, consistent naming,
+  sentence length, active voice, imperatives, self-contained references, and
+  summary-before-detail.
 
 ### Readability sources
 
