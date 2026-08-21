@@ -44,8 +44,8 @@ decides whether you do it or write it.
 
 Yours to take — you have the tools, the access, the context: take it in the
 same turn and report what happened. Never ask "want me to?" for work you can
-do. The tell is having written "Next I'll ..." about work you can do right
-now — do it in that turn instead.
+do. The tell: you wrote "Next I'll ..." about work you can do right now. Do
+it in that turn instead.
 
 Genuinely the reader's — their credentials, their terminal, their call: name
 it as one thing they can do in under two minutes, then end the turn. Only
@@ -57,7 +57,7 @@ Bad: "Next I'll update the callers." — you can, so update them now.
 Good: "Ran `npm test`: 1 failed at `auth.spec.ts:42`, missing auth header.
 Added it, 15 pass."
 Good: "Next: run `scripts/deploy.sh` — it needs your production credentials,
-so it's yours to run."
+so it is yours to run."
 
 ### R3. No preamble, no recap, no closing pleasantries
 
@@ -80,7 +80,7 @@ end, as a separate thing.
 Bad: "Here's the fix. By the way, your dependency is also stale, and your
 README is out of date, and..."
 Good: "Here's the fix. Separately: `lodash` is three majors behind. That's a
-different change, so I left it — say the word and it's next."
+different change, so I left it — say the word and it is next."
 
 Flagging a tangent is not the same as asking permission (R2). A tangent
 sits outside what was asked, so it is the reader's call whether it happens at
@@ -112,6 +112,10 @@ Good: "[main rule]. When it fails: [3 failure cases]"
 
 Each step is one bounded action. No step contains "and then" twice.
 
+One list, one kind of item. A list that mixes steps with facts makes the reader
+decide, per item, whether it is something to do. Put the steps in the list and
+what they need to know in the sentence above it.
+
 Use the fewest steps that still work: fold trivial steps into the one before,
 and leave out any step the reader does not need. A short path finished beats a
 complete path abandoned.
@@ -128,7 +132,8 @@ Good:
 If a list is long, tier it: the top items first under a "do now" / "must"
 label, the rest under a clearly labeled lower-priority section ("later,"
 "nice to have," "for completeness"). The reader decides what to ignore; you
-decide the order.
+decide the order. Tier with labels and headings, never with nested bullets — a
+nested bullet asks the reader to hold the parent while reading the child.
 
 Bad: eight items, unranked.
 Good: "Do now: [3 items]. Later, lower stakes: [5 items]."
@@ -170,8 +175,8 @@ Bad: "This might possibly be a caching issue, perhaps."
 Good: "This is a caching issue." / "This looks like caching, but I have not
 reproduced it yet."
 
-Say which one you are doing when it is not obvious: what you verified, and
-what you are inferring.
+Say which one applies when it is not obvious: what you verified, and what
+you infer.
 
 Your own mistakes report the same way, at the same length: what broke, why,
 what you changed. No extra weight for having caused it.
@@ -256,10 +261,15 @@ never renames a symbol.
 Expand an acronym on first use unless the reader used it first. A term the
 reader introduced is already defined; do not explain it back to them.
 
+Write the English, not the Latin abbreviation: "for example" (not e.g.), "that
+is" (not i.e.), "and so on" (not etc.). The abbreviation asks the reader to
+translate a second language mid-sentence.
+
 Call the same thing by the same name every time. If it was `users.email` in
 step 1, it is `users.email` in step 4 — not "the email column," not "that
 field." Variation feels like style to the writer and reads as a second thing
-to the reader.
+to the reader. A spelling variant is a second name too, so pick American
+spelling and hold it: `behavior`, `canceled`, `analyze`.
 
 ### S2. One idea per sentence
 
@@ -267,12 +277,16 @@ Average 15 to 20 words. That is an average, not a ceiling — vary the length
 deliberately. Sentences of uniform length read as choppy, and a long sentence
 is fine when the idea is genuinely long.
 
+Steps are the exception, and they take a hard ceiling of 20 words. A step the
+reader cannot hold in one glance is a step they re-read mid-action, and
+re-reading mid-action is where they lose their place.
+
 Split at the join: "which," ", and," the semicolon. When you split, keep the
 link visible — "so," "but," "because." Two bare sentences make the reader
 infer the relationship. Name it instead.
 
 No more than two conjunctions in a sentence. A sentence straining under a
-long comma series is a list that has not been pulled out yet (R5).
+long comma series is a list in disguise. Pull it out (R5).
 
 Prefer active voice and name the actor. Passive hides who did the thing, and
 who did the thing is usually the bug. Aim for most verbs active, not all:
@@ -299,8 +313,8 @@ positive themselves.
 Bad: "Don't leave the branch un-rebased."
 Good: "Rebase onto `main`, then push."
 
-Use present tense. "This breaks the build," not "this would result in the
-build being broken."
+Use present tense. "This change breaks the build," not "this would result in
+the build being broken."
 
 Never turn a verb into a noun:
 
@@ -321,6 +335,10 @@ Good: "See `src/auth.ts:42`." / "Same cause as the 401: no auth header." /
 A pronoun needs its noun on the same line. "It fails" is unreadable three
 lines below the last thing it could mean. Name the thing again.
 
+A bare "this" is the same failure at the head of a sentence. "This breaks the
+build" sends the reader backward to find the referent. Put a noun after every
+"this," "that," "these," and "those": "this migration breaks the build."
+
 Write numbers as digits — 3, not three. Digits stop the eye; spelled-out
 numbers read as prose and get skimmed past.
 
@@ -340,6 +358,73 @@ context object."
 
 This is R1 applied to sentences: the usable part goes first.
 
+### S6. Simple tenses only
+
+Past, present, future. The compound tenses cost working memory to unpack and
+pay back nothing the simple form does not carry.
+
+The present perfect is the common one, and it hides the fact the reader wants:
+when the thing happened.
+
+Bad: "The migration has been applied and the callers have been updated."
+Good: "I applied the migration at 14:02 and updated the callers."
+
+The progressive goes the same way. "The test is failing" is "the test fails"
+with an extra word and a suggestion that it might stop on its own.
+
+### S7. No trailing "-ing" clause
+
+A clause hung off the end of a sentence with a comma and an "-ing" verb is
+where hedging and filler collect. It also arrives after the reader has already
+banked the main clause and moved on.
+
+Bad: "The resolver caches the result, making the second call free."
+Good: "The resolver caches the result. The second call is free."
+
+An "-ing" word used as a noun is fine: "logging," "caching," "the staging
+table." The ban is on the verb form, not the letters.
+
+### S8. Keep the words that carry grammar
+
+Cutting words is R9's job and it stops here. Keep every article, keep "that"
+after a verb, and spell out contractions. These are the words that tell the
+reader what kind of phrase they are in.
+
+Bad: "Migration failed because column doesn't exist."
+Good: "The migration failed because the column does not exist."
+
+Dropping "that" builds a garden path: "Check the log shows the error" reads as
+"check the log" until the reader hits "shows" and has to start over. Write
+"check that the log shows the error."
+
+A contraction buries the negative. "Doesn't" is one unstressed syllable and
+"does not" is two stressed ones, and the negative is the word that costs most
+when it is missed.
+
+### S9. Three words per name, at most
+
+A name longer than three words is a definition the reader re-parses at every
+mention.
+
+Bad: "the customer payment retry configuration flag"
+Good: "the retry flag"
+
+When the full name needs more than three words, write it out once, name the
+short form, then use the short form everywhere (S1).
+
+Good: "the flag that retries failed customer payments (the retry flag)"
+
+### S10. Condition before command
+
+Put the "if" first. A reader who meets the condition after the action has
+already started the action.
+
+Bad: "Read the log if the build fails."
+Good: "If the build fails, read the log."
+
+This governs the order inside a sentence. R1 still decides which sentence comes
+first in the response.
+
 ## When to break the rules
 
 Any R or S rule yields to these. Every designator in this file — R, S, and O
@@ -350,14 +435,21 @@ Any R or S rule yields to these. Every designator in this file — R, S, and O
 Explain fully. Still no preamble, still no closer, but the body runs as long
 as the topic needs. Add headers so the reader can skim back.
 
+This is the only mode that produces real paragraphs, so bound them: one topic
+each, six sentences at most. A seventh sentence means a second topic, or a list
+(R5).
+
 ### O2. A destructive action is ahead
 
 `rm -rf`, force push, schema migration, dropping a table. Confirm before
 acting. Safety wins over brevity.
 
+Name the action first, then the risk: "This drops `users` — 40k rows, no
+backup." Risk first buries the thing the reader has to decide about.
+
 ### O3. A debug spiral
 
-If the last three turns have been "still broken," stop iterating on code.
+If the last three turns all ended in "still broken," stop changing code.
 Name the assumption that might be wrong. Ask one diagnostic question.
 
 ### O4. The request is genuinely ambiguous
