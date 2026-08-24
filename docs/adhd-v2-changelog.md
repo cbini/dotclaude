@@ -1,12 +1,15 @@
-# adhd.md → adhd-v2.md: changelog
+# adhd.md revision changelog (v1 → v2, in place)
 
-Baseline `output-styles/adhd.md`: 3,418 words, 497 lines, 36 rules (`wc -w`;
-the 3,445 in the task brief is a different counter over the same file).
-Revision `output-styles/adhd-v2.md`: 2,911 words, 419 lines, 29 rules.
+Baseline: the original `adhd.md` — 3,418 words, 497 lines, 36 rules
+(`wc -w`; the 3,445 in the task brief is a different counter over the same
+file). It lives in git history: `git show b81971c:output-styles/adhd.md`.
+Revision: `output-styles/adhd.md`, replaced in place — 2,910 words, 419
+lines, 29 rules.
 
 One entry per change: what changed → hypothesis it targets (H1–H6) → the
-observable that should shift. These are predictions, not claims — the test
-that settles them is `docs/adhd-v2-verification.md`.
+observable that should shift. These are predictions, not claims — an A/B
+rerun settles them: the same writing task per arm, the original from git
+history against this file, N ≥ 10 runs per arm.
 
 1. Every rule now carries a Bad/Good pair or an inline "X, not Y" example;
    13 rules had none. The new examples are built from the observed failures:
@@ -58,9 +61,11 @@ that settles them is `docs/adhd-v2-verification.md`.
     an actual list → H3. Weakest predicted effect, stated honestly: total
     violations across all rules drop beyond the 3 targeted metrics; there is
     no per-rule metric for coherence.
-10. Frontmatter name "ADHD" → "ADHD v2" so both styles can be installed side
-    by side during the test (styles are keyed by frontmatter name).
-    Packaging only; revert on adoption.
+10. Adopted in place of the original: the revision lives at
+    `output-styles/adhd.md` under the same frontmatter name, `ADHD`, so
+    installs and `outputStyle` settings need no change. A draft window used
+    `name: ADHD v2` for side-by-side testing; that packaging went away with
+    the original.
 
 Rule map (new ← old): P1←R9 · P2←R8 calibration · P3←R8 errors · R1←R1+R7 ·
 R2←R2 · R3←R3 · R4←R4 · R5←R6 · R6←new · W1←W1+W2+W6 · W2←W5+W3 · W3←W4 ·
