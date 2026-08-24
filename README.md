@@ -43,12 +43,12 @@ the style file — the style file holds only text that changes the output:
   readability](https://accessibility.huit.harvard.edu/design-readability)
 - [ASD-STE100 Simplified Technical English](https://asd-ste100.org/), Issue 9,
   by way of [AminBlg/SimpleEnglish](https://github.com/AminBlg/SimpleEnglish)
-  — source of W8 (three-word name limit), S6 (simple tenses), S7 (no
-  trailing "-ing" clause), S9 (keep articles, "that", and full negatives),
-  S10 (condition before command), the 20-word ceiling on steps, the
-  one-kind-of-item list rule, and the paragraph bounds in O1. Its ban on
-  `should`/`may`/`might` is deliberately not adopted: R8 requires a hedge
-  when the uncertainty is real. Its ban on all phrasal verbs is not adopted
+  — source of the 3-word name limit (W4), simple tenses and the trailing
+  "-ing" clause ban (S4), keeping articles, "that", and full negatives
+  (S5), condition before command (S3), the 20-word ceiling on steps and the
+  one-kind-of-item list rule (L1), and the paragraph bounds in O1. Its ban
+  on `should`/`may`/`might` is deliberately not adopted: P2 requires a
+  hedge when the uncertainty is real. Its ban on all phrasal verbs is not adopted
   either, because "set up" is the common word and W1 asks for the common
   word. Its approved-word dictionary does not transfer — the style has no
   word list to check against.
