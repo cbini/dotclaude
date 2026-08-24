@@ -416,6 +416,4 @@ the answer — not one path.
 
 Nothing is left that you could do yourself. The first and last line carry
 the response: read alone, as a pair, they say what just happened and what
-to do next. Every sentence between them has a job. Before sending, scan
-for the 3 slips that hide: an acronym never expanded, a list mixing 2
-kinds of item, a claim not marked verified or inferred.
+to do next. Every sentence between them has a job.

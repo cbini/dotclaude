@@ -6,7 +6,7 @@ and the outcomes that would falsify them are at the end.
 ## Arms
 
 - **A**: `output-styles/adhd.md` (original, 3,418 words)
-- **B**: `output-styles/adhd-v2.md` (revision, 2,938 words)
+- **B**: `output-styles/adhd-v2.md` (revision, 2,911 words)
 - **C** (reference ceiling): `.github/PLAIN_LANGUAGE.md` from
   `TEAMSchools/teamster` — the 42-line derivative that won the first test
 
@@ -144,7 +144,8 @@ Same wrapper prompt, swapping the template and brief for:
    worked for the surface that failed. Restore the response section to
    first position and rerun.
 3. B deletes template lines A kept, or Task 1 metric 8 fires (narrated
-   self-check, quoted rules): the new blocks backfired — also worse.
+   compliance, quoted rule numbers): the new blocks — the precedence
+   block, R6 — backfired. Also worse.
 4. B beats A only where outputs echo the file's own example vocabulary
    ("inferred, not checked") and paraphrase cases still fail: the file
    taught strings, not rules. Rerun with a second brief (different
@@ -192,3 +193,9 @@ revision's author, unblinded.
 
 Raw outputs: `docs/pilot/{a1..a4,b1..b4}.md` — governed prose only, with
 the template scaffolding stripped for the word counts.
+
+Staleness note: the pilot ran against a v2 draft whose closer ended with a
+3-item self-check naming these exact metrics. That check was cut right
+after the pilot, so runs b1–b4 saw a file the current v2 no longer is.
+The check named the acronym metric, the one B swept — rerun against the
+current file before crediting B's 0 of 4 to the rules alone.

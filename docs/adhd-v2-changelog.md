@@ -2,7 +2,7 @@
 
 Baseline `output-styles/adhd.md`: 3,418 words, 497 lines, 36 rules (`wc -w`;
 the 3,445 in the task brief is a different counter over the same file).
-Revision `output-styles/adhd-v2.md`: 2,938 words, 421 lines, 29 rules.
+Revision `output-styles/adhd-v2.md`: 2,911 words, 419 lines, 29 rules.
 
 One entry per change: what changed → hypothesis it targets (H1–H6) → the
 observable that should shift. These are predictions, not claims — the test
@@ -26,7 +26,7 @@ that settles them is `docs/adhd-v2-verification.md`.
    (R1+R7). 36 rules → 29 → H1. Named risk: a merged clause could inherit
    the buried-clause failure; the per-clause micro-examples are the hedge,
    and the test counts S-clauses separately.
-4. Cut ~480 words net (−14%), nearly all rationale beyond one clause per
+4. Cut ~510 words net (−15%), nearly all rationale beyond one clause per
    rule, while example count grew → H1. Predicted: formerly short rules
    gain without the long ones losing. If short-rule compliance still lags,
    the next lever is a deeper cut toward the 42-line file's density.
@@ -46,14 +46,11 @@ that settles them is `docs/adhd-v2-verification.md`.
 8. Cut the untestable meta — "there is no revision pass," "sent text cannot
    be taken back," "a sentence that slipped stays" — keeping the testable
    half (never mention the style; fix slips silently) → H5. Predicted: no
-   direct output change; the cut removes text that forbids the self-check
-   entry 9 adds, and funds it.
-9. New closing self-check naming the 3 observed failure modes (unexpanded
-   acronym, mixed list, unmarked inference) → H2, enabled by H5. Predicted:
-   those metrics improve at end-of-generation where mid-file rules fade.
-   Falsified if outputs narrate the check ("checking acronyms...") — a new
-   violation the test screens for.
-10. Coherence pass — the file now passes its own rules: all 13 numeric
+   single metric moves — H5's mechanism is freed attention, so the
+   observable is aggregate: fewer total violations than a variant that
+   keeps the meta. (A closing self-check briefly filled the freed space;
+   it was cut on review as more meta — the closer now ends on the rules.)
+9. Coherence pass — the file now passes its own rules: all 13 numeric
     cross-references removed (restated inline in words), the 4 negative
     titles reframed positive ("No preamble..." → "Open on the answer, close
     on the work"), its own spelled-out numbers digitized, a contraction cut
@@ -61,7 +58,7 @@ that settles them is `docs/adhd-v2-verification.md`.
     an actual list → H3. Weakest predicted effect, stated honestly: total
     violations across all rules drop beyond the 3 targeted metrics; there is
     no per-rule metric for coherence.
-11. Frontmatter name "ADHD" → "ADHD v2" so both styles can be installed side
+10. Frontmatter name "ADHD" → "ADHD v2" so both styles can be installed side
     by side during the test (styles are keyed by frontmatter name).
     Packaging only; revert on adoption.
 
