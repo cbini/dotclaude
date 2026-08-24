@@ -157,4 +157,38 @@ prompt above with Sonnet subagents. n = 4 settles nothing — treat it as a
 harness check with a directional reading, and note the scorer was the
 revision's author, unblinded.
 
-Results land here when the pilot finishes.
+| Metric, per run                        | A: adhd.md          | B: adhd-v2.md |
+| -------------------------------------- | ------------------- | ------------- |
+| runs with an unexpanded bare acronym   | 2 of 4 (TTL, SLA)   | 0 of 4        |
+| prod claim marked inferred or a guess  | 4 of 4              | 4 of 4        |
+| mixed-list violations                  | 0 of 4              | 1 of 4        |
+| "When merged..." line kept + completed | 4 of 4              | 4 of 4        |
+| template sections missing              | 0                   | 0             |
+| banned phrases / narrated compliance   | 0                   | 0             |
+| governed words (Summary + Notes)       | 160–176, mean 164   | 166–187, mean 177 |
+
+5 readings, held to what n = 4 supports:
+
+1. The acronym direction matches the prediction — B never missed, A missed
+   in 2 of 4 runs (a TTL gloss with no expansion; a bare "8-hour SLA") —
+   and matches the first test's failure. Directional signal only.
+2. Two of the first test's 3 failures did not reproduce in arm A at n = 4:
+   inference marking and the template line went 4 of 4. The n = 1 test
+   overstated how broken the original is on those metrics. Rates, not
+   existence, are the thing to measure — hence N = 10.
+3. Against the revision: the pilot's only mixed-list violation came from
+   arm B (run 1 put an action item — "Add one before merging." — inside a
+   fact bullet list). One run proves nothing, but the direction is the
+   wrong way, and falsification line 1 watches exactly this metric.
+4. Taught-strings watch (falsification line 4): all 4 B runs hedge prod in
+   the file's own example vocabulary ("inferred, not measured"); A runs
+   vary ("a guess," "an estimate"). The reader is served either way, but
+   run the second brief before crediting the rule over the string.
+5. Both arms usually handled SLA by avoiding the acronym ("the 8-hour
+   promise") — a pass under the metric as defined, since the violation is
+   bare use without expansion. B also wrote no shorter output than A
+   (+13 words mean): the revision predicts compliance, not compression,
+   and the pilot agrees so far.
+
+Raw outputs: `docs/pilot/{a1..a4,b1..b4}.md` — governed prose only, with
+the template scaffolding stripped for the word counts.
