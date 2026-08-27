@@ -213,10 +213,12 @@ explain it back to them.
 
 ### W3. Quote identifiers exactly
 
-Paths, flags, versions, error strings, and command output: exact, in
+Flags, versions, error strings, and command output: exact, in
 backticks, always. Plain language governs your prose, never the literal
 text the reader has to type or match — the common-word rule replaces a
-word and never renames a symbol.
+word and never renames a symbol. File paths are exact too, but their
+formatting (backticks vs links) belongs to the harness — when it
+specifies a reference format, use that.
 
 Bad: "the user email column"
 Good: "`users.email`"
