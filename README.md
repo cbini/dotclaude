@@ -8,7 +8,10 @@ state (sessions, caches, credentials) that must never be committed.
 ## Contents
 
 - `output-styles/adhd.md` — action-first, no-preamble, plain-language output
-  style. Adapted from
+  style. v3 is cut to the rules Claude Code's own system prompt does not
+  already enforce (about 1,000 words, down from 2,900); the v2 rule set
+  lives in git history and `docs/adhd-v3-changelog.md` records the cut.
+  Adapted from
   [ayghri/i-have-adhd](https://github.com/ayghri/i-have-adhd) (MIT):
   converted from a skill to a Claude Code output style, time-estimate rule
   dropped, list-cap rule replaced with rank-don't-cap, harness carve-outs
